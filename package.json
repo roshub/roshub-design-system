@@ -1,5 +1,5 @@
 {
-  "name": "@roshub/design-system",
+  "name": "@roshub/design-system-dev",
   "version": "0.0.0",
   "homepage": "https://design.roshub.io/",
   "repository": "roshub/design-system",
@@ -17,8 +17,9 @@
     "version": "npx auto-changelog -p && git add CHANGELOG.md",
     "dist": "yarn clean:dist && yarn dist:prod && yarn dist:type && yarn dist:copy",
     "dist:prod": "npx cross-env NODE_ENV=production babel src -d dist -s --extensions .tsx --ignore 'src/**/*.stories.tsx'",
-    "dist:type": "tsc -p tsconfig.prod.json && cpy-cli src/typings dist/typings",
-    "dist:copy": "cpy-cli README.md CHANGELOG.md LICENSE package.json dist/",
+    "dist:type": "tsc -p tsconfig.prod.json && cpy src/typings dist/typings",
+    "dist:copy": "cpy README.md CHANGELOG.md LICENSE package.json dist/",
+    "dist:pack": "npx json -I -f dist/package.json -e 'this.name=@roshub/design-system'",
     "clean:build": "npx rimraf ./build",
     "clean:dist": "npx rimraf ./dist"
   },
@@ -49,6 +50,7 @@
     "@types/styled-components": "^4.1.19",
     "babel-loader": "^8.0.6",
     "cpy-cli": "^2.0.0",
+    "json": "^9.0.6",
     "react": "^16.9.0",
     "react-docgen-typescript-loader": "^3.2.0",
     "react-docgen-typescript-webpack-plugin": "^1.1.0",
