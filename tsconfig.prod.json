@@ -26,5 +26,5 @@
     "!node_modules/@jest",
     "*/**/*.stories.tsx"
   ],
-  "include": ["./src"]
+  "include": ["src"]
 }
