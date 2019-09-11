@@ -1,5 +1,8 @@
-import styled, { createGlobalStyle, DefaultTheme } from 'styled-components/macro'
-import { flexCenterColumn } from './Mixin';
+import styled, {
+  createGlobalStyle,
+  DefaultTheme
+} from 'styled-components/macro'
+import { flexCenterColumn } from './Mixin'
 
 export const theme: DefaultTheme = {
   name: 'default',
@@ -14,7 +17,7 @@ export const theme: DefaultTheme = {
     lightPrimary: '#E1BEE7',
     darkPrimary: '#7B1FA2',
     accentColor: '#7C4DFF',
-    
+
     disabled: '#aaa',
 
     idle: '#bc7eb6',
@@ -31,12 +34,10 @@ export const theme: DefaultTheme = {
   },
 
   fontSize: {
-    header: 3,
+    header: 3
   },
 
-  content: {
-    
-  },
+  content: {},
 
   font: {
     title: '',

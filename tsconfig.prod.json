@@ -11,7 +11,7 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "listEmittedFiles": true,
-    "jsx": "preserve",
+    "jsx": "react",
     "skipLibCheck": true,
     "types": [],
     "typeRoots": ["src/typings"],
