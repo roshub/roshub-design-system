@@ -1,6 +1,6 @@
 import React, { cloneElement, } from 'react'
 
-import { animated, useSpring } from 'react-spring'
+import { a, useSpring } from 'react-spring'
 
 type CircleComponent = React.DetailedReactHTMLElement<
   {
@@ -14,8 +14,8 @@ type CircleComponent = React.DetailedReactHTMLElement<
   HTMLElement
 >
 
-const SmallCircleContainer = ({ children, dotColor, dotSize }) => (
-  <animated.g>
+const SmallCircleContainer = ({ children, dotColor, dotSize } : any) => (
+  <a.g>
     {children.map((c: CircleComponent, i: number) =>
       cloneElement(c, {
         key: `small-circle-${i}`,
@@ -26,7 +26,7 @@ const SmallCircleContainer = ({ children, dotColor, dotSize }) => (
         }
       })
     )}
-  </animated.g>
+  </a.g>
 )
 
 const quadFx = (s: number) => 25 * (-4 * s * (s - 1))
@@ -73,13 +73,13 @@ export const AnimatedRoshubLogo = ({ size = 300 }) => {
     // onRest: () => setDone(true)
   })
   return (
-    <animated.div
+    <a.div
       style={{
         width: '100%',
         maxWidth: `${size}px`
       }}
     >
-      <animated.svg
+      <a.svg
         fill="none"
         strokeLinecap="square"
         strokeMiterlimit={10}
@@ -87,7 +87,7 @@ export const AnimatedRoshubLogo = ({ size = 300 }) => {
       >
         <path fill="#000" fillOpacity={0} d="M0 0h768v768H0z" />
         {/* Lines: */}
-        <animated.g
+        <a.g
           strokeDasharray={strokeDasharray}
           strokeDashoffset={strokeDashoffset}
         >
@@ -166,16 +166,16 @@ export const AnimatedRoshubLogo = ({ size = 300 }) => {
             strokeWidth={8}
             d="M571.971 192.11h0c31.758-1.73 61.676 17.023 77.403 48.516 15.727 31.493 14.595 70.386-2.927 100.623-17.522 30.237-48.464 46.69-80.052 42.567"
           />
-        </animated.g>
+        </a.g>
 
         {/* Circles */}
-        <animated.g
+        <a.g
           style={{
             transform: rotation.interpolate(r => `rotate(${r})`),
             transformOrigin: 'center'
           }}
         >
-          <animated.g
+          <a.g
             style={{
               transform: bigDotSize.interpolate(
                 s => `scale(${s}) translate(${-quadFx(s)}%, ${quadFx(s)}%)`
@@ -194,10 +194,10 @@ export const AnimatedRoshubLogo = ({ size = 300 }) => {
               strokeWidth={4}
               d="M132.33 576h0c0-32.954 26.716-59.67 59.67-59.67h0A59.67 59.67 0 0 1 251.67 576h0c0 32.954-26.716 59.67-59.67 59.67h0c-32.954 0-59.67-26.716-59.67-59.67z"
             />
-          </animated.g>
+          </a.g>
 
           <SmallCircleContainer dotColor={dotColor} dotSize={dotSize}>
-            <animated.g>
+            <a.g>
               <path
                 fill="#000"
                 d="M162.425 192c0-16.334 13.241-29.575 29.575-29.575A29.575 29.575 0 0 1 221.575 192c0 16.334-13.241 29.575-29.575 29.575S162.425 208.334 162.425 192z"
@@ -210,9 +210,9 @@ export const AnimatedRoshubLogo = ({ size = 300 }) => {
                 strokeWidth={4}
                 d="M162.425 192h0c0-16.334 13.241-29.575 29.575-29.575h0A29.575 29.575 0 0 1 221.575 192h0c0 16.334-13.241 29.575-29.575 29.575h0c-16.334 0-29.575-13.241-29.575-29.575z"
               />
-            </animated.g>
+            </a.g>
 
-            <animated.g>
+            <a.g>
               <path
                 fill="#000"
                 d="M162.425 384c0-16.334 13.241-29.575 29.575-29.575A29.575 29.575 0 0 1 221.575 384c0 16.334-13.241 29.575-29.575 29.575S162.425 400.334 162.425 384z"
@@ -224,9 +224,9 @@ export const AnimatedRoshubLogo = ({ size = 300 }) => {
                 strokeWidth={4}
                 d="M162.425 384h0c0-16.334 13.241-29.575 29.575-29.575h0A29.575 29.575 0 0 1 221.575 384h0c0 16.334-13.241 29.575-29.575 29.575h0c-16.334 0-29.575-13.241-29.575-29.575z"
               />
-            </animated.g>
+            </a.g>
 
-            <animated.g>
+            <a.g>
               <path
                 fill="#000"
                 d="M354.425 384c0-16.334 13.241-29.575 29.575-29.575A29.575 29.575 0 0 1 413.575 384c0 16.334-13.241 29.575-29.575 29.575S354.425 400.334 354.425 384z"
@@ -238,9 +238,9 @@ export const AnimatedRoshubLogo = ({ size = 300 }) => {
                 strokeWidth={4}
                 d="M354.425 384h0c0-16.334 13.241-29.575 29.575-29.575h0A29.575 29.575 0 0 1 413.575 384h0c0 16.334-13.241 29.575-29.575 29.575h0c-16.334 0-29.575-13.241-29.575-29.575z"
               />
-            </animated.g>
+            </a.g>
 
-            <animated.g>
+            <a.g>
               <path
                 fill="#000"
                 d="M354.425 576c0-16.334 13.241-29.575 29.575-29.575A29.575 29.575 0 0 1 413.575 576c0 16.334-13.241 29.575-29.575 29.575S354.425 592.334 354.425 576z"
@@ -252,9 +252,9 @@ export const AnimatedRoshubLogo = ({ size = 300 }) => {
                 strokeWidth={4}
                 d="M354.425 576h0c0-16.334 13.241-29.575 29.575-29.575h0A29.575 29.575 0 0 1 413.575 576h0c0 16.334-13.241 29.575-29.575 29.575h0c-16.334 0-29.575-13.241-29.575-29.575z"
               />
-            </animated.g>
+            </a.g>
 
-            <animated.g>
+            <a.g>
               <path
                 fill="#000"
                 d="M546.425 384c0-16.334 13.241-29.575 29.575-29.575A29.575 29.575 0 0 1 605.575 384c0 16.334-13.241 29.575-29.575 29.575S546.425 400.334 546.425 384z"
@@ -266,9 +266,9 @@ export const AnimatedRoshubLogo = ({ size = 300 }) => {
                 strokeWidth={4}
                 d="M546.425 384h0c0-16.334 13.241-29.575 29.575-29.575h0A29.575 29.575 0 0 1 605.575 384h0c0 16.334-13.241 29.575-29.575 29.575h0c-16.334 0-29.575-13.241-29.575-29.575z"
               />
-            </animated.g>
+            </a.g>
 
-            <animated.g>
+            <a.g>
               <path
                 fill="#000"
                 d="M546.425 576c0-16.334 13.241-29.575 29.575-29.575A29.575 29.575 0 0 1 605.575 576c0 16.334-13.241 29.575-29.575 29.575S546.425 592.334 546.425 576z"
@@ -280,9 +280,9 @@ export const AnimatedRoshubLogo = ({ size = 300 }) => {
                 strokeWidth={4}
                 d="M546.425 576h0c0-16.334 13.241-29.575 29.575-29.575h0A29.575 29.575 0 0 1 605.575 576h0c0 16.334-13.241 29.575-29.575 29.575h0c-16.334 0-29.575-13.241-29.575-29.575z"
               />
-            </animated.g>
+            </a.g>
 
-            <animated.g>
+            <a.g>
               <path
                 fill="#000"
                 d="M546.425 192c0-16.334 13.241-29.575 29.575-29.575A29.575 29.575 0 0 1 605.575 192c0 16.334-13.241 29.575-29.575 29.575S546.425 208.334 546.425 192z"
@@ -294,9 +294,9 @@ export const AnimatedRoshubLogo = ({ size = 300 }) => {
                 strokeWidth={4}
                 d="M546.425 192h0c0-16.334 13.241-29.575 29.575-29.575h0A29.575 29.575 0 0 1 605.575 192h0c0 16.334-13.241 29.575-29.575 29.575h0c-16.334 0-29.575-13.241-29.575-29.575z"
               />
-            </animated.g>
+            </a.g>
 
-            <animated.g>
+            <a.g>
               <path
                 fill="#000"
                 d="M354.425 192c0-16.334 13.241-29.575 29.575-29.575A29.575 29.575 0 0 1 413.575 192c0 16.334-13.241 29.575-29.575 29.575S354.425 208.334 354.425 192z"
@@ -308,10 +308,10 @@ export const AnimatedRoshubLogo = ({ size = 300 }) => {
                 strokeWidth={4}
                 d="M354.425 192h0c0-16.334 13.241-29.575 29.575-29.575h0A29.575 29.575 0 0 1 413.575 192h0c0 16.334-13.241 29.575-29.575 29.575h0c-16.334 0-29.575-13.241-29.575-29.575z"
               />
-            </animated.g>
+            </a.g>
           </SmallCircleContainer>
-        </animated.g>
-      </animated.svg>
-    </animated.div>
+        </a.g>
+      </a.svg>
+    </a.div>
   )
 }
