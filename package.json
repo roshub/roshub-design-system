@@ -1,5 +1,5 @@
 {
-  "name": "@roshub/design-system-dev",
+  "name": "@roshub/design-system",
   "version": "0.0.0",
   "homepage": "https://design.roshub.io/",
   "repository": "roshub/design-system",
@@ -20,7 +20,7 @@
     "dist:prod": "npx cross-env NODE_ENV=production babel src -d dist -s --extensions .tsx --ignore 'src/**/*.stories.tsx'",
     "dist:type": "tsc -p tsconfig.prod.json && cpy src/typings dist/typings",
     "dist:copy": "cpy README.md CHANGELOG.md LICENSE package.json dist/",
-    "dist:pack": "json -I -f dist/package.json -e 'this.name=\"@roshub/design-system\"'",
+    "dist:pack": "json -I -f dist/package.json -e 'this.devDependencies={}'",
     "dist:cctp": "yarn dist:clean && yarn dist:copy && yarn dist:type && yarn dist:pack",
     "dist:clean": "npx rimraf ./dist"
   },
