@@ -77,11 +77,6 @@ export const Global = createGlobalStyle`
     color: ${p => p.theme.color.darkPrimary};
   }
 
-  ::-webkit-scrollbar {
-    width: 9px;
-    height: 9px;
-  }
-
   ::-webkit-scrollbar-track {
     background: ${p => p.theme.color.primary};
   }
