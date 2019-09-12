@@ -18,6 +18,8 @@ export const theme: DefaultTheme = {
     darkPrimary: '#7B1FA2',
     accentColor: '#7C4DFF',
 
+    background: '#fff',
+
     disabled: '#aaa',
 
     idle: '#bc7eb6',

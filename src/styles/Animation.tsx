@@ -26,11 +26,9 @@ export function SlideIn({
     <animated.div
       style={{
         opacity: signinProps.opacity,
-        transform: signinProps.xyz.to(((
-          x: number,
-          y: number,
-          z: number
-        ) => `translate3d(${x}px,${y}px,${z}px)`) as any)
+        transform: signinProps.xyz.to(
+          (x, y, z) => `translate3d(${x}px,${y}px,${z}px)`
+        )
       }}
       {...props}
     >
@@ -79,9 +77,7 @@ export function SlideInAndOut({
   return (
     <animated.div
       style={{
-        transform: x.to(
-          (value: number) => `translate3d(0,${value}px,0)`
-        )
+        transform: x.to((value: number) => `translate3d(0,${value}px,0)`)
       }}
     >
       <animated.div style={{ height }}>{children}</animated.div>

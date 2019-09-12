@@ -40,6 +40,7 @@ export const AnimatedRoshubLogo = ({ size = 300 }) => {
     bigDotSize,
     rotation
   } = useSpring({
+    duration: 5000,
     from: {
       dots: [0, 0, 0, 0, 0, 0, 0, 0],
       dotSize: 0,
@@ -47,11 +48,11 @@ export const AnimatedRoshubLogo = ({ size = 300 }) => {
       dotColor: 'black',
       strokeDashoffset: 500,
       strokeDasharray: 500,
-      rotation: '180deg'
+      rotation: 180
     },
     to: async next => {
       await next({
-        rotation: '0deg',
+        rotation: 0,
         bigDotSize: 0.5,
         dotSize: 1,
       })
@@ -171,13 +172,13 @@ export const AnimatedRoshubLogo = ({ size = 300 }) => {
         {/* Circles */}
         <a.g
           style={{
-            transform: rotation.interpolate(r => `rotate(${r})`),
+            transform: rotation.to(r => `rotate(${r}deg)`),
             transformOrigin: 'center'
           }}
         >
           <a.g
             style={{
-              transform: bigDotSize.interpolate(
+              transform: bigDotSize.to(
                 s => `scale(${s}) translate(${-quadFx(s)}%, ${quadFx(s)}%)`
               ),
               transformOrigin: '50% 50%'

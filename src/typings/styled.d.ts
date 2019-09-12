@@ -15,6 +15,8 @@ declare module 'styled-components' {
       darkPrimary: string
       accentColor: string
 
+      background: string
+
       disabled: string
 
       idle: string
