@@ -19,6 +19,6 @@
     "emitDeclarationOnly": true,
     "noImplicitAny": false
   },
-  "exclude": ["*/**/*.stories.tsx"],
+  "exclude": ["*/**/*.stories.tsx", "node_modules/**/*"],
   "include": ["src"]
 }
