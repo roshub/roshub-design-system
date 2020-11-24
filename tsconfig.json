@@ -18,7 +18,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "types": ["react", "jest"]
+    "types": ["react", "jest"],
+    "declaration": false
   },
   "include": [
     "src"

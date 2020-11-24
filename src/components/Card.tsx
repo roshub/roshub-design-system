@@ -11,6 +11,7 @@ const CardContainer = animated(styled.div`
   overflow: hidden;
 `)
 
+/*
 export const Card = animated(styled.div`
   width: 300px;
 
@@ -26,9 +27,14 @@ export const Card = animated(styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  padding: 1em 0;
+  padding: 1em 0; 
+  
+  */
 
   /* color: ${p => p.theme.color.background}; */
+  
+  /*
+  
   background: ${p => p.theme.color.background};
   border-radius: 20px;
 
@@ -44,7 +50,7 @@ export const Card = animated(styled.div`
   :hover {
     box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.8);
   }
-`)
+`)*/
 
 const calc = (x: number, y: number, rect: any) => [
   (y - rect.top - rect.height / 2) / 20,
@@ -54,7 +60,7 @@ const calc = (x: number, y: number, rect: any) => [
 
 const trans: any = (x: string, y: string, s: string) =>
   `perspective(450px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
-
+/*
 export const HoverCard = ({ children, className = '', animate = true }) => {
   const ref = useRef(null) as any
   const [props, set] = useSpring(() => ({
@@ -79,3 +85,4 @@ export const HoverCard = ({ children, className = '', animate = true }) => {
     </CardContainer>
   )
 }
+*/
